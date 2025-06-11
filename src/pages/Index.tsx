@@ -1,49 +1,286 @@
-
 import { MapPin, Building, QrCode } from "lucide-react";
 
 const departments = [
   {
-    name: "Water Department",
+    name: "Accounts Department",
     floor: 1,
     room: "101",
     link: "#water",
-    id: "water-department"
+    id: "Accounts Department"
   },
   {
-    name: "Property Tax",
+    name: "Bridge Cell",
     floor: 2,
     room: "202",
-    link: "#property-tax",
+    link: "Bridge Cell",
     id: "property-tax-department"
   },
   {
-    name: "Health & Sanitation",
+    name: "Bulk Collection System, Health Control room and Malaria",
     floor: 3,
     room: "303",
     link: "#health",
-    id: "health-department"
+    id: "Bulk Collection System, Health Control room and Malaria"
   },
   {
-    name: "Building Permits",
+    name: "Colony Cell",
     floor: 1,
     room: "105",
-    link: "#permits",
-    id: "permits-department"
+    link: "#Colony Cell",
+    id: ""
   },
   {
-    name: "City Planning",
+    name: "Death and Birth Department, Marriage",
     floor: 3,
     room: "310",
     link: "#planning",
-    id: "planning-department"
+    id: "Death and Birth Department, Marriage"
   },
   {
-    name: "Municipal Court",
+    name: "Drainage Department",
     floor: 2,
     room: "250",
     link: "#court",
-    id: "court-department"
-  }
+    id: "Drainage Department"
+  },
+  {
+    name: "Electricity and maintenance department",
+    floor: 2,
+    room: "250",
+    link: "#Electricity and maintenance department",
+    id: ""
+  },
+  {
+    name: "Establishment, Central Record and Central Store, Nigam Control room, Laboratory department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Establishment, Central Record and Central Store, Nigam Control room, Laboratory department"
+  },
+  {
+    name: "Garden Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Garden Department"
+  },
+  {
+    name: "Goshala Prakosth",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Goshala Prakosth"
+  },
+  {
+    name: "IT Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "IT Department"
+  },
+  {
+    name: "Law Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Law Department"
+  },
+  {
+    name: "Lease department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Lease department"
+  },
+  {
+    name: "NRY Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "NRY Department"
+  },
+  {
+    name: "Parishad Karyalaya",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Parishad Karyalaya"
+  },
+  {
+    name: "Yojana shakha",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Yojana shakha"
+  },
+  {
+    name: "PMAY Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "PMAY Department"
+  },
+  {
+    name: "PWD Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "PWD Department"
+  },
+  {
+    name: "Regional Park",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Regional Park"
+  },
+  {
+    name: "Removal and kondwada",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Removal and kondwada"
+  },
+  {
+    name: "Revenue Department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Revenue Department"
+  },
+  {
+    name: "Shala Prakosth (Education Cell)",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Shala Prakosth (Education Cell)"
+  },
+  {
+    name: "Water Supply and tubewell",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Water Supply and tubewell"
+  },
+  {
+    name: "Workshop",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Workshop"
+  },
+  {
+    name: "yatayat (traffic) department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "yatayat (traffic) department"
+  },
+  {
+    name: "Zoo department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Zoo department"
+  },
+  {
+    name: "DDARY & rain basera",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "DDARY & rain basera"
+  },
+  {
+    name: " deendayal{NULM}",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: " deendayal{NULM}"
+  },
+  {
+    name: "election (nirvachan amd janganana)",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "election (nirvachan amd janganana)"
+  },
+  {
+    name: "Stores ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Stores "
+  },
+  {
+    name: "science public works department",
+    floor: 2,
+    room: "250",
+    link: "science public works department",
+    id: " "
+  },
+  {
+    name: "deprtment of general adminstration ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: " deprtment of general adminstration"
+  },
+  {
+    name: "urban poverty department ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "urban poverty department "
+  },
+  {
+    name: "Commisioner ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Commisioner "
+  },
+  {
+    name: " Swachhta & Thos",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Swachhta & Thos "
+  },
+  {
+    name: " map department",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "map department "
+  }, {
+    name: "Fire  ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Fire"
+  },
+  {
+    name: "CM helpline ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "CM helpline"
+  },
+  {
+    name: "SBI ATM 1",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "SBI ATM 1 "
+  },
+  {
+    name: "City Bus pass",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "City Bus pass "
+  },
+  
 ];
 
 const Index = () => {
@@ -107,7 +344,7 @@ const Index = () => {
                   <div className="bg-secondary p-4 rounded-2xl border border-border shadow-inner">
                     <img
                       src="https://via.placeholder.com/120x120/e5e7eb/6b7280?text=QR"
-                      alt={`QR Code for ${dept.name}`}
+                      alt={'QR Code for ${dept.name}'}
                       className="w-24 h-24 rounded-lg"
                     />
                   </div>
