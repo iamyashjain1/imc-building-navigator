@@ -1,11 +1,11 @@
 import { MapPin, Building, QrCode } from "lucide-react";
 
 const departments = [
-  {
+{
     name: "Accounts Department",
     floor: 1,
     room: "101",
-    link: "#water",
+    link: "https://maps.app.goo.gl/cU8ECtJGzh7AzaSt7",
     id: "Accounts Department"
   },
   {
@@ -33,14 +33,14 @@ const departments = [
     name: "Death and Birth Department, Marriage",
     floor: 3,
     room: "310",
-    link: "#planning",
+    link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV9",
     id: "Death and Birth Department, Marriage"
   },
   {
     name: "Drainage Department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/PJ6jZL8d5B3YaY3i6",
     id: "Drainage Department"
   },
   {
@@ -61,7 +61,7 @@ const departments = [
     name: "Garden Department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/L83c1LKbHqCEf4F66",
     id: "Garden Department"
   },
   {
@@ -75,14 +75,14 @@ const departments = [
     name: "IT Department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/bGgAa68YcLHW1yyZ9",
     id: "IT Department"
   },
   {
     name: "Law Department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/C7xdkZ8rKs7iUCUi7",
     id: "Law Department"
   },
   {
@@ -100,18 +100,11 @@ const departments = [
     id: "NRY Department"
   },
   {
-    name: "Parishad Karyalaya",
+    name: "Planning Branch",
     floor: 2,
     room: "250",
-    link: "#court",
-    id: "Parishad Karyalaya"
-  },
-  {
-    name: "Yojana shakha",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Yojana shakha"
+    link: "https://www.google.com/maps?q=22.7231693,75.8596246",
+    id: "Planning Branch"
   },
   {
     name: "PMAY Department",
@@ -173,7 +166,7 @@ const departments = [
     name: "yatayat (traffic) department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/cvpwMiuZgcSihCqU6",
     id: "yatayat (traffic) department"
   },
   {
@@ -194,21 +187,21 @@ const departments = [
     name: " deendayal{NULM}",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/nyCAGJeERkvhcKjn8",
     id: " deendayal{NULM}"
   },
   {
     name: "election (nirvachan amd janganana)",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/EJW9kDST6ZvqEzyh6",
     id: "election (nirvachan amd janganana)"
   },
   {
     name: "Stores ",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/EJW9kDST6ZvqEzyh6",
     id: "Stores "
   },
   {
@@ -236,7 +229,7 @@ const departments = [
     name: "Commisioner ",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "Commisioner "
   },
   {
@@ -250,36 +243,37 @@ const departments = [
     name: " map department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/XRo5QV6YYEYqzUDn9",
     id: "map department "
-  }, {
+  },
+  {
     name: "Fire  ",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/kKNc4CJS738Wwxos6",
     id: "Fire"
   },
   {
     name: "CM helpline ",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/qSwd46TtHhBnE7CU8",
     id: "CM helpline"
   },
   {
     name: "SBI ATM 1",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://www.google.com/maps?q=22.723224,75.8595619",
     id: "SBI ATM 1 "
   },
   {
     name: "City Bus pass",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/6uNA3nyyTxy9iAjXA",
     id: "City Bus pass "
-  },
+  }
   
 ];
 
@@ -289,6 +283,10 @@ const Index = () => {
       {/* Header */}
       <header className="bg-card/95 backdrop-blur-sm shadow-lg border-b border-border">
         <div className="container mx-auto px-4 py-8">
+          <div className="mt-12 text-center">
+          {/* <img
+            src="src/img/Emblem_of_IMC_Indore.jpg"></img> */}
+        </div>
           <div className="flex items-center justify-center space-x-4">
             <div className="p-3 bg-imc-primary rounded-full shadow-lg">
               <Building className="h-8 w-8 text-primary-foreground" />
@@ -353,6 +351,8 @@ const Index = () => {
                 {/* Action Button */}
                 <a
                   href={dept.link}
+                  target="_blank"              // 👈 opens in new tab
+                  rel="noopener noreferrer"    // 👈 security best practice
                   className="w-full bg-imc-primary text-primary-foreground py-4 px-6 rounded-xl font-semibold hover:bg-imc-primary/90 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 group shadow-lg hover:shadow-xl"
                 >
                   <MapPin className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -372,6 +372,8 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        
 
         {/* Information Section */}
         <div className="mt-16 bg-card backdrop-blur-sm rounded-2xl shadow-xl border border-border p-8">
