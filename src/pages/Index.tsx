@@ -1,4 +1,6 @@
 import { MapPin, Building, QrCode } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
+
 
 const departments = [
 {
@@ -125,7 +127,8 @@ const departments = [
     floor: 2,
     room: "250",
     link: "#court",
-    id: "Regional Park"
+    id: "Regional Park",
+    img: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ1-xOLp9i1FONP-SX6wAe7R0SprswRxlzvbC39nMoe0v4HTUBmvbhLNXucsBRafhHXq9NtBeMh_44JUqE"
   },
   {
     name: "Removal and kondwada",
@@ -139,7 +142,8 @@ const departments = [
     floor: 2,
     room: "250",
     link: "#court",
-    id: "Revenue Department"
+    id: "Revenue Department",
+    img: "img\Emblem_of_IMC_Indore copy.jpg"
   },
   {
     name: "Shala Prakosth (Education Cell)",
@@ -340,13 +344,20 @@ const Index = () => {
                 {/* QR Code */}
                 <div className="flex justify-center mb-8">
                   <div className="bg-secondary p-4 rounded-2xl border border-border shadow-inner">
-                    <img
-                      src="https://via.placeholder.com/120x120/e5e7eb/6b7280?text=QR"
-                      alt={'QR Code for ${dept.name}'}
-                      className="w-24 h-24 rounded-lg"
-                    />
-                  </div>
+                    <QRCodeSVG
+  value={dept.link}
+  size={96}
+  bgColor="#ffffff"
+  fgColor="#000000"
+  level="Q"
+  className="rounded-lg"
+/>
+</div>
                 </div>
+{/* <div>
+<img src={dept.img}></img>
+</div> */}
+                  
 
                 {/* Action Button */}
                 <a
