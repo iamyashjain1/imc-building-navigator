@@ -128,7 +128,7 @@ const departments = [
     room: "250",
     link: "#court",
     id: "Regional Park",
-    img: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ1-xOLp9i1FONP-SX6wAe7R0SprswRxlzvbC39nMoe0v4HTUBmvbhLNXucsBRafhHXq9NtBeMh_44JUqE"
+    img: ""
   },
   {
     name: "Removal and kondwada",
@@ -143,7 +143,7 @@ const departments = [
     room: "250",
     link: "#court",
     id: "Revenue Department",
-    img: "img\Emblem_of_IMC_Indore copy.jpg"
+    img: ""
   },
   {
     name: "Shala Prakosth (Education Cell)",
