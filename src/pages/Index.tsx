@@ -10,26 +10,26 @@ const departments = [
     link: "https://maps.app.goo.gl/cU8ECtJGzh7AzaSt7",
     id: "Accounts Department"
   },
-  {
-    name: "Bridge Cell",
-    floor: 2,
-    room: "202",
-    link: "Bridge Cell",
-    id: "property-tax-department"
-  },
+  // {
+  //   name: "Bridge Cell",
+  //   floor: 2,
+  //   room: "202",
+  //   link: "Bridge Cell",
+  //   id: "property-tax-department"
+  // },
   {
     name: "Bulk Collection System, Health Control room and Malaria",
     floor: 3,
     room: "303",
-    link: "#health",
+    link: "https://maps.app.goo.gl/oZJbxy9mg6fgXp3c9",
     id: "Bulk Collection System, Health Control room and Malaria"
   },
   {
     name: "Colony Cell",
     floor: 1,
     room: "105",
-    link: "#Colony Cell",
-    id: ""
+    link: "https://maps.app.goo.gl/PGJYdbmTh29HGqzG9",
+    id: "Colony Cell"
   },
   {
     name: "Death and Birth Department, Marriage",
@@ -49,14 +49,14 @@ const departments = [
     name: "Electricity and maintenance department",
     floor: 2,
     room: "250",
-    link: "#Electricity and maintenance department",
-    id: ""
+    link: "https://maps.app.goo.gl/yFnqM4qy6dMyxB7H8",
+    id: "Electricity and maintenance department"
   },
   {
     name: "Establishment, Central Record and Central Store, Nigam Control room, Laboratory department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://www.google.com/maps/place/22%C2%B043'19.7%22N+75%C2%B051'34.6%22E/@22.7221356,75.8570226,17z/data=!3m1!4b1!4m4!3m3!8m2!3d22.7221356!4d75.8595975?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D",
     id: "Establishment, Central Record and Central Store, Nigam Control room, Laboratory department"
   },
   {
@@ -66,13 +66,13 @@ const departments = [
     link: "https://maps.app.goo.gl/L83c1LKbHqCEf4F66",
     id: "Garden Department"
   },
-  {
-    name: "Goshala Prakosth",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Goshala Prakosth"
-  },
+  // {
+  //   name: "Goshala Prakosth",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "Goshala Prakosth"
+  // },
   {
     name: "IT Department",
     floor: 2,
@@ -91,14 +91,14 @@ const departments = [
     name: "Lease department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/nNQ1JQXRbwnTnerq5",
     id: "Lease department"
   },
   {
     name: "NRY Department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "NRY Department"
   },
   {
@@ -108,98 +108,98 @@ const departments = [
     link: "https://www.google.com/maps?q=22.7231693,75.8596246",
     id: "Planning Branch"
   },
-  {
-    name: "PMAY Department",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "PMAY Department"
-  },
-  {
-    name: "PWD Department",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "PWD Department"
-  },
-  {
-    name: "Regional Park",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Regional Park",
-    img: ""
-  },
+  // {
+  //   name: "PMAY Department",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "PMAY Department"
+  // },
+  // {
+  //   name: "PWD Department",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "PWD Department"
+  // },
+  // {
+  //   name: "Regional Park",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "Regional Park",
+  //   img: ""
+  // },
   {
     name: "Removal and kondwada",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/5YY8RCTrntKDrAj49",
     id: "Removal and kondwada"
   },
   {
     name: "Revenue Department",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV9",
     id: "Revenue Department",
-    img: ""
+    img: "Revenue Department"
   },
   {
     name: "Shala Prakosth (Education Cell)",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV10",
     id: "Shala Prakosth (Education Cell)"
   },
-  {
-    name: "Water Supply and tubewell",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Water Supply and tubewell"
-  },
+  // {
+  //   name: "Water Supply and tubewell",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV11", "iski link galat h"
+  //   id: "Water Supply and tubewell"
+  // },
   {
     name: "Workshop",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV12",
     id: "Workshop"
   },
   {
-    name: "yatayat (traffic) department",
+    name: "yatayat department",
     floor: 2,
     room: "250",
     link: "https://maps.app.goo.gl/cvpwMiuZgcSihCqU6",
-    id: "yatayat (traffic) department"
+    id: "yatayat department"
   },
-  {
-    name: "Zoo department",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Zoo department"
-  },
+  // {
+  //   name: "Zoo department",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV12",
+  //   id: "Zoo department"
+  // },
   {
     name: "DDARY & rain basera",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/nyCAGJeERkvhcKjn8",
     id: "DDARY & rain basera"
   },
   {
-    name: " deendayal{NULM}",
+    name: " deendayal(NULM)",
     floor: 2,
     room: "250",
     link: "https://maps.app.goo.gl/nyCAGJeERkvhcKjn8",
-    id: " deendayal{NULM}"
+    id: " deendayal (NULM)"
   },
   {
-    name: "election (nirvachan amd janganana)",
+    name: "Election (nirvachan amd janganana)",
     floor: 2,
     room: "250",
     link: "https://maps.app.goo.gl/EJW9kDST6ZvqEzyh6",
-    id: "election (nirvachan amd janganana)"
+    id: "Election (nirvachan amd janganana)"
   },
   {
     name: "Stores ",
@@ -208,25 +208,25 @@ const departments = [
     link: "https://maps.app.goo.gl/EJW9kDST6ZvqEzyh6",
     id: "Stores "
   },
-  {
-    name: "science public works department",
-    floor: 2,
-    room: "250",
-    link: "science public works department",
-    id: " "
-  },
-  {
-    name: "deprtment of general adminstration ",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: " deprtment of general adminstration"
-  },
+  // {
+  //   name: "science public works department",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "science public works department",
+  //   id: ""
+  // },
+  // {
+  //   name: "deprtment of general adminstration ",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: " deprtment of general adminstration"
+  // },
   {
     name: "urban poverty department ",
     floor: 2,
     room: "250",
-    link: "#court",
+    link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "urban poverty department "
   },
   {
@@ -236,13 +236,13 @@ const departments = [
     link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "Commisioner "
   },
-  {
-    name: " Swachhta & Thos",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Swachhta & Thos "
-  },
+  // {
+  //   name: " Swachhta & Thos",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "Swachhta & Thos "
+  // },
   {
     name: " map department",
     floor: 2,
