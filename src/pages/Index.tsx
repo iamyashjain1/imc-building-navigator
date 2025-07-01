@@ -422,6 +422,8 @@ const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  // Chat state
+  const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -555,10 +557,10 @@ const Index = () => {
               />
               {search && (
                 <button
-                  type="button"
-                  onClick={() => setSearch("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-imc-primary focus:outline-none"
-                  aria-label="Clear search"
+                 type="button"
+                 onClick={() => setSearch("")}
+                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-imc-primary focus:outline-none"
+                 aria-label="Clear search"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -697,6 +699,40 @@ const Index = () => {
           </div>
         </footer>
       </main>
+      {/* Fixed Chat Button */}
+      <button
+        className="fixed bottom-6 right-6 z-50 bg-imc-primary hover:bg-imc-accent text-white rounded-full w-32 h-32 flex items-center justify-center shadow-lg transition-all duration-300"
+        style={{ boxShadow: '0 4px 24px 0 rgba(0,0,0,0.18)' }}
+        onClick={() => setChatOpen(o => !o)}
+        aria-label="Open chat"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A8.96 8.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      </button>
+      {/* Chat Box */}
+      {chatOpen && (
+        <div className="fixed bottom-40 right-6 z-50 w-[38rem] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-border p-8 flex flex-col">
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-bold text-2xl text-imc-primary">Chat Support</span>
+            <button
+              className="text-gray-400 hover:text-imc-primary text-3xl"
+              onClick={() => setChatOpen(false)}
+              aria-label="Close chat"
+            >
+              ×
+            </button>
+          </div>
+          <div className="flex-1 text-lg text-muted-foreground mb-4 min-h-[120px]">
+            How can we help you?
+          </div>
+          <input
+            type="text"
+            className="w-full px-5 py-4 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-imc-primary text-lg"
+            placeholder="Type your message..."
+          />
+        </div>
+      )}
     </div>
   );
 };
