@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapPin, Building, QrCode, Sun, Moon } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 
@@ -43,7 +43,8 @@ const departmentLogos = {
   "SBI ATM 1": "https://cdn-icons-png.flaticon.com/512/1046/1046896.png",
   "City Bus pass": "https://cdn-icons-png.flaticon.com/512/1046/1046897.png"
 };
-const departments = [
+
+const departmentsRaw = [
   {
     name: "Accounts Department",
     name_hi: "लेखा विभाग",
@@ -52,14 +53,14 @@ const departments = [
     link: "https://maps.app.goo.gl/cU8ECtJGzh7AzaSt7",
     id: "Accounts Department"
   },
-  // {
-  //   name: "Bridge Cell",
-  //   name_hi: "ब्रिज सेल",
-  //   floor: 2,
-  //   room: "202",
-  //   link: "Bridge Cell",
-  //   id: "property-tax-department"
-  // },
+  {
+    name: "Bridge Cell",
+    name_hi: "ब्रिज सेल",
+    floor: 2,
+    room: "202",
+    link: "Bridge Cell",
+    id: "property-tax-department"
+  },
   {
     name: "Bulk Collection System, Health Control room and Malaria",
     name_hi: "थोक संग्रह प्रणाली, स्वास्थ्य नियंत्रण कक्ष और मलेरिया",
@@ -116,14 +117,14 @@ const departments = [
     link: "https://maps.app.goo.gl/L83c1LKbHqCEf4F66",
     id: "Garden Department"
   },
-  // {
-  //   name: "Goshala Prakosth",
-  //   name_hi: "गोशाला प्रकोष्ठ",
-  //   floor: 2,
-  //   room: "250",
-  //   link: "#court",
-  //   id: "Goshala Prakosth"
-  // },
+  {
+    name: "Goshala Prakosth",
+    name_hi: "गोशाला प्रकोष्ठ",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Goshala Prakosth"
+  },
   {
     name: "IT Department",
     name_hi: "आईटी विभाग",
@@ -172,23 +173,23 @@ const departments = [
     link: "https://www.google.com/maps?q=22.7231693,75.8596246",
     id: "Planning Branch"
   },
-  // {
-  //   name: "PWD Department",
-  //   name_hi: "पीडब्ल्यूडी विभाग",
-  //   floor: 2,
-  //   room: "250",
-  //   link: "#court",
-  //   id: "PWD Department"
-  // },
-  // {
-  //   name: "Regional Park",
-  //   name_hi: "क्षेत्रीय पार्क",
-  //   floor: 2,
-  //   room: "250",
-  //   link: "#court",
-  //   id: "Regional Park",
-  //   img: ""
-  // },
+  {
+    name: "PWD Department",
+    name_hi: "पीडब्ल्यूडी विभाग",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "PWD Department"
+  },
+  {
+    name: "Regional Park",
+    name_hi: "क्षेत्रीय पार्क",
+    floor: 2,
+    room: "250",
+    link: "#court",
+    id: "Regional Park",
+    img: ""
+  },
   {
     name: "Removal and kondwada",
     name_hi: "निष्कासन और निपटान",
@@ -278,14 +279,14 @@ const departments = [
     link: "https://maps.app.goo.gl/EJW9kDST6ZvqEzyh6",
     id: "Stores "
   },
-  // {
-  //   name: "science public works department",
-  //   name_hi: "विज्ञान लोक निर्माण विभाग",
-  //   floor: 2,
-  //   room: "250",
-  //   link: "science public works department",
-  //   id: ""
-  // },
+  {
+    name: "science public works department",
+    name_hi: "विज्ञान लोक निर्माण विभाग",
+    floor: 2,
+    room: "250",
+    link: "science public works department",
+    id: ""
+  },
   {
     name: "deprtment of general adminstration",
     name_hi: "सामान्य प्रशासन विभाग",
@@ -310,14 +311,14 @@ const departments = [
     link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "Commisioner "
   },
-  // {
-  //   name: "Swachhta & Thos",
-  //   name_hi: "स्वच्छता & ठोस",
-  //   floor: 1,
-  //   room: "250",
-  //   link: "#court",
-  //   id: "Swachhta & Thos "
-  // },
+  {
+    name: "Swachhta & Thos",
+    name_hi: "स्वच्छता & ठोस",
+    floor: 1,
+    room: "250",
+    link: "#court",
+    id: "Swachhta & Thos "
+  },
   {
     name: "map department",
     name_hi: "मानचित्र विभाग",
@@ -358,35 +359,184 @@ const departments = [
     link: "https://maps.app.goo.gl/6uNA3nyyTxy9iAjXA",
     id: "City Bus pass "
   }
-  
-].map(dept => ({
-  ...dept,
-  logo: departmentLogos[dept.name] || "/img/Emblem_of_IMC_Indore.jpg" // fallback to IMC logo if no specific logo found
-}));
+];
+
+// Dropdown links for nav search
+const dropdownLinks = [
+  { label: 'Property Tax Correction Unit', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'E Municipal License Boring', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'Narmada water supply', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'spot fine', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'water tax market', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'transportation', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'Lab (water testing)', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'Ram Roti Scheme', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'Urban Transport and Vehicle Parking Department', href: 'https://maps.app.goo.gl/p2FqgQuFp95Dnjxc8' },
+  { label: 'Sanitation and Solid Waste Management Department', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'Establishment branch', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'Additional Commissioner Shri Siddharth Jain', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'Additional Commissioner Shri Manoj Kumar Chaurasia', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'Additional Commissioner Shri Shyamendra Jaiswa', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'New Garden Department', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'colony cell', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'fire department', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'Deputy Commissioner Lata Agarwal', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'garden department maintenance branch', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'garden department civil branch', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'council office', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'CM Helpline', href: 'https://maps.app.goo.gl/iGVsehEtuky8NveD8' },
+  { label: 'IT department', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'Pension Department (Super Staff)', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'Planning and Information Technology Public Affairs Department', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'accounting department', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'Commissioner Shri Shivam Verma', href: 'https://maps.app.goo.gl/Anc1qucNaiYURVJh7' },
+  { label: 'Public Information Office', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'Consultancy Accounts Department', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'Mayor Inbound and outbound department.', href: 'https://maps.app.goo.gl/eXJY8aJE7bc61KmeA' },
+  { label: 'Municipal Corporation Control Room', href: 'https://maps.app.goo.gl/xdaMyNWZGh414krw7' },
+  { label: 'record room', href: 'https://maps.app.goo.gl/SzM7uqRjNvNyb6Qr9' },
+  { label: 'health Department', href: 'https://maps.app.goo.gl/SzM7uqRjNvNyb6Qr9' },
+  { label: 'malaria department', href: 'https://maps.app.goo.gl/SzM7uqRjNvNyb6Qr9' },
+  { label: 'Jai Hind Bhawan', href: 'https://maps.app.goo.gl/eWsvfZkd9JiW5qax6' },
+  { label: 'pension (health department)', href: 'https://maps.app.goo.gl/eWsvfZkd9JiW5qax6' },
+  { label: 'NRY office', href: 'https://maps.app.goo.gl/VecBY3FfM5oE5Sn76' },
+  { label: 'Kondwara department', href: 'https://maps.app.goo.gl/skMWMJ1GiejMNs2w6' },
+  { label: 'Drainage Department', href: 'https://maps.app.goo.gl/XdHapDWBXPbWkPT56' },
+  { label: 'CTPT Department', href: 'https://maps.app.goo.gl/XdHapDWBXPbWkPT56' },
+  { label: 'Revenue Department (Birth Death Marriage Certificate)', href: 'https://maps.app.goo.gl/TgsNKa31REx4duNt5' },
+  { label: 'NULM Office', href: 'https://maps.app.goo.gl/Z3updv8mDbDaj8Jf9' },
+];
+
+const departments = departmentsRaw
+  .map(dept => ({
+    ...dept,
+    logo: departmentLogos[dept.name] || "/img/Emblem_of_IMC_Indore.jpg"
+  }))
+  .filter(dept => dept.link && dept.link.trim() !== "" && !["#court", "Bridge Cell", "science public works department", "Regional Park", "PWD Department", "Goshala Prakosth", "Swachhta & Thos"].includes(dept.link));
+
+const totalDepartments = departments.length;
 
 const Index = () => {
   const [search, setSearch] = useState("");
   const [imgLoaded, setImgLoaded] = useState({});
   const [darkMode, setDarkMode] = useState(false);
-  const filteredDepartments = departments.filter(
-    dept =>
-      dept.name.toLowerCase().includes(search.toLowerCase()) ||
-      (dept.name_hi && dept.name_hi.includes(search))
-  );
-  React.useEffect(() => {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
+
+  useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
+
+  const filteredDepartments = departments.filter(dept =>
+    dept.name.toLowerCase().includes(search.toLowerCase()) ||
+    (dept.name_hi && dept.name_hi.includes(search))
+  );
+
   return (
     <div className="min-h-screen bg-background dark:bg-zinc-900 transition-colors duration-300">
+      {/* IMC Navigation Bar - Custom Gradient & Structure */}
+      <nav
+        className="w-full shadow z-40"
+        style={{
+          background: 'linear-gradient(90deg, rgba(0,212,255,1) 10%, rgba(239,0,255,1) 35%, rgba(2,0,36,1) 120%)',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+        }}
+      >
+        <div className="flex flex-wrap items-center justify-between px-4 py-2" style={{display:'flex'}}>
+          {/* Logo */}
+          <div className="flex items-center logo-container">
+            <img 
+              src="/img/Emblem_of_IMC_Indore.jpg" 
+              alt="Logo" 
+              className="object-contain logo"
+              style={{ height: '170px', width: 'auto', background: 'none', boxShadow: 'none' }}
+            />
+          </div>
+          {/* Logo Text & Language Switch */}
+          <div className="flex flex-col items-start logo-text-container">
+            <a href="/img/Emblem_of_IMC_Indore.jpg" className="logo-text hidden" tabIndex={-1}></a>
+            <p className="logo-text text-white font-extrabold text-lg md:text-4xl leading-tight">
+              INDORE MUNICIPAL CORPORATION (IMC)<br className="logo-text" />
+              <span className="block w-full text-center font-normal text-base font-extrabold md:text-5xl pt-4">
+                इंदौर नगर पालिका निगम
+              </span>
+              <span>
+              <a
+                href="https://hemantsharma15.github.io/IMC-Locator/todo2.html"
+                className="block w-full text-center font-normal alink ml-4 text-yellow-200 hover:text-white transition text-base font-medium"
+                id="switch-lang"
+                title="Change Language हिन्दी"
+                aria-label="Change Language हिन्दी"
+                rel="हिन्दी"
+                target="_blank"
+              >
+                <i className="fa fa-language mr-1" aria-hidden="true"></i> हिन्दी
+              </a></span>
+            </p>
+          </div>
+          {/* Search & Dropdown */}
+          <div className="search-container flex items-center space-x-2 relative mt-2 md:mt-0">
+            {/* Hamburger for mobile */}
+            <button
+              className="block md:hidden text-white text-2xl focus:outline-none dropdown-icon"
+              onClick={() => setNavOpen(o => !o)}
+              aria-label="Toggle dropdown menu"
+              type="button"
+            >
+              <i className="fas fa-bars"></i>
+            </button>
+            {/* Search input */}
+            <div className="relative">
+              <input
+                type="text"
+                className="form-control me-2 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                id="searchInput"
+                placeholder="Search..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                style={{ minWidth: 180 }}
+                onFocus={() => setNavOpen(true)}
+              />
+              <i className="fas fa-search search-icon absolute right-3 top-1/2 -translate-y-1/2 text-white" style={{paddingRight:'5px'}}></i>
+            </div>
+            {/* Dropdown menu */}
+            {navOpen && (
+              <div
+                className="dropdown-menu absolute top-12 left-0 w-64 bg-white text-black rounded shadow-lg border border-gray-200 z-50 max-h-72 overflow-y-auto animate-fade-in-down"
+                style={{display:'block'}}
+                onMouseLeave={() => setNavOpen(false)}
+              >
+                {dropdownLinks
+                  .filter(link => link.label.toLowerCase().includes(search.toLowerCase()))
+                  .map((link, idx) => (
+                    <a
+                      key={idx}
+                      href={link.href}
+                      className="block px-4 py-2 hover:bg-cyan-100 text-sm border-b last:border-b-0 border-gray-100"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                {dropdownLinks.filter(link => link.label.toLowerCase().includes(search.toLowerCase())).length === 0 && (
+                  <div className="px-4 py-2 text-gray-400 text-sm">No results found</div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </nav>
       {/* Header */}
       <header className="bg-card/95 dark:bg-zinc-800/95 backdrop-blur-sm shadow-lg border-b border-border dark:border-zinc-700">
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-end mb-4">
             <button
+              type="button"
               onClick={() => setDarkMode(d => !d)}
               className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 transition-colors shadow"
               aria-label="Toggle dark mode"
@@ -394,18 +544,12 @@ const Index = () => {
               {darkMode ? <Sun className="h-5 w-5 text-yellow-400" /> : <Moon className="h-5 w-5 text-zinc-700 dark:text-zinc-200" />}
             </button>
           </div>
-          <div className="mt-12 text-center">
-          {/* <img
-            src="src/img/Emblem_of_IMC_Indore.jpg"></img> */}
-        </div>
           <div className="flex items-center justify-center space-x-4">
             <div className="p-3 bg-imc-primary rounded-full shadow-lg">
               <Building className="h-8 w-8 text-primary-foreground" />
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-imc-primary">
-                IMC Department Locator Map
-              </h1>
+              <h1 className="text-4xl font-bold text-imc-primary">IMC Department Locator Map</h1>
               <div className="h-1 w-32 bg-imc-accent rounded-full mx-auto mt-2"></div>
             </div>
           </div>
@@ -419,9 +563,9 @@ const Index = () => {
                 type="text"
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                placeholder="Search department (English or Hindi)"
                 className="w-full px-5 py-3 pr-12 border border-border dark:border-zinc-700 rounded-xl shadow focus:outline-none focus:ring-2 focus:ring-imc-primary text-lg bg-white/80 dark:bg-zinc-800/80 backdrop-blur placeholder:text-gray-400 dark:placeholder:text-zinc-400 transition-all duration-200"
                 style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.04)' }}
+                placeholder="Search department (English or Hindi)"
               />
               {search && (
                 <button
@@ -439,9 +583,8 @@ const Index = () => {
           </div>
         </div>
       </header>
-
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
+        {/* Main Content */}
         {filteredDepartments.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24">
             <span className="text-3xl font-bold text-imc-primary dark:text-imc-accent mb-4">No results found</span>
@@ -541,19 +684,16 @@ const Index = () => {
           ))}
         </div>
         )}
-
         {/* Information Section */}
         <div className="mt-16 bg-card backdrop-blur-sm rounded-2xl shadow-xl border border-border p-8">
-          <h3 className="text-2xl font-bold text-center mb-8 text-imc-primary">
-            Building Information
-          </h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-imc-primary">Building Information</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6 bg-secondary rounded-2xl border border-border">
               <div className="text-4xl font-bold text-imc-primary mb-2">3</div>
               <div className="text-muted-foreground font-semibold">Total Floors</div>
             </div>
             <div className="p-6 bg-muted rounded-2xl border border-border">
-              <div className="text-4xl font-bold text-imc-primary mb-2">6</div>
+              <div className="text-4xl font-bold text-imc-primary mb-2">{totalDepartments}</div>
               <div className="text-muted-foreground font-semibold">Active Departments</div>
             </div>
             <div className="p-6 bg-secondary rounded-2xl border border-border">
@@ -562,7 +702,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-
         {/* Footer */}
         <footer className="mt-16 text-center">
           <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border">
