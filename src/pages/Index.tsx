@@ -450,7 +450,7 @@ const Index = () => {
           {/* Logo */}
           <div className="flex items-center logo-container">
             <img 
-              src="/img/Emblem_of_IMC_Indore.jpg" 
+              src="img\Emblem_of_IMC_Indore-removebg-preview.png" 
               alt="Logo" 
               className="object-contain logo"
               style={{ height: '170px', width: 'auto', background: 'none', boxShadow: 'none' }}
@@ -489,21 +489,7 @@ const Index = () => {
             >
               <i className="fas fa-bars"></i>
             </button>
-            {/* Search input */}
-            <div className="relative">
-              <input
-                type="text"
-                className="form-control me-2 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                id="searchInput"
-                placeholder="Search..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                style={{ minWidth: 180 }}
-                onFocus={() => setNavOpen(true)}
-              />
-              <i className="fas fa-search search-icon absolute right-3 top-1/2 -translate-y-1/2 text-white" style={{paddingRight:'5px'}}></i>
-            </div>
-            {/* Dropdown menu */}
+            {/* Dropdown menu only, search input removed */}
             {navOpen && (
               <div
                 className="dropdown-menu absolute top-12 left-0 w-64 bg-white text-black rounded shadow-lg border border-gray-200 z-50 max-h-72 overflow-y-auto animate-fade-in-down"
