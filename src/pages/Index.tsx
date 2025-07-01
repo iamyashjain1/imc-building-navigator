@@ -48,7 +48,7 @@ const departments = [
     name: "Accounts Department",
     name_hi: "लेखा विभाग",
     floor: 1,
-    room: "101",
+    room: "ground Floor",
     link: "https://maps.app.goo.gl/cU8ECtJGzh7AzaSt7",
     id: "Accounts Department"
   },
@@ -79,7 +79,7 @@ const departments = [
   {
     name: "Death and Birth Department, Marriage",
     name_hi: "मृत्यु एवं जन्म विभाग, विवाह",
-    floor: 3,
+    floor: "ground Floor",
     room: "310",
     link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV9",
     id: "Death and Birth Department, Marriage"
@@ -87,7 +87,7 @@ const departments = [
   {
     name: "Drainage Department",
     name_hi: "जल निकासी विभाग",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://maps.app.goo.gl/PJ6jZL8d5B3YaY3i6",
     id: "Drainage Department"
@@ -103,7 +103,7 @@ const departments = [
   {
     name: "Establishment, Central Record and Central Store, Nigam Control room, Laboratory department",
     name_hi: "स्थापना (स्थापना), केंद्रीय अभिलेख एवं केंद्रीय भण्डार, निगम नियंत्रण कक्ष, प्रयोगशाला विभाग",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://www.google.com/maps/place/22%C2%B043'19.7%22N+75%C2%B051'34.6%22E/@22.7221356,75.8570226,17z/data=!3m1!4b1!4m4!3m3!8m2!3d22.7221356!4d75.8595975?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D",
     id: "Establishment, Central Record and Central Store, Nigam Control room, Laboratory department"
@@ -127,7 +127,7 @@ const departments = [
   {
     name: "IT Department",
     name_hi: "आईटी विभाग",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://maps.app.goo.gl/bGgAa68YcLHW1yyZ9",
     id: "IT Department"
@@ -151,7 +151,7 @@ const departments = [
   {
     name: "NRY Department",
     name_hi: "एनआरवाई विभाग/शहरी गरीबी विभाग",
-    floor: 2,
+    floor: "ground Floor",
     room: "250",
     link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "NRY Department"
@@ -159,7 +159,7 @@ const departments = [
   {
     name: "Council Office",
     name_hi: "परिषद कार्यालय",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://www.google.com/maps?q=22.7231693,75.8596246",
     id: "Planning Branch"
@@ -167,7 +167,7 @@ const departments = [
   {
     name: "Planning Branch",
     name_hi: "योजना शाखा",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://www.google.com/maps?q=22.7231693,75.8596246",
     id: "Planning Branch"
@@ -192,7 +192,7 @@ const departments = [
   {
     name: "Removal and kondwada",
     name_hi: "निष्कासन और निपटान",
-    floor: 2,
+    floor: "ground Floor",
     room: "250",
     link: "https://maps.app.goo.gl/5YY8RCTrntKDrAj49",
     id: "Removal and kondwada"
@@ -200,7 +200,7 @@ const departments = [
   {
     name: "Revenue Department",
     name_hi: "राजस्व विभाग",
-    floor: 2,
+    floor: "ground Floor",
     room: "250",
     link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV9",
     id: "Revenue Department",
@@ -217,7 +217,7 @@ const departments = [
   {
     name: "Water Supply and tubewell",
     name_hi: "जलापूर्ति एवं ट्यूबवेल",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV11",
     id: "Water Supply and tubewell"
@@ -257,7 +257,7 @@ const departments = [
   {
     name: " deendayal(NULM)",
     name_hi: "दीनदयाल{NULM}",
-    floor: 2,
+    floor: "ground Floor",
     room: "250",
     link: "https://maps.app.goo.gl/nyCAGJeERkvhcKjn8",
     id: " deendayal (NULM)"
@@ -305,7 +305,7 @@ const departments = [
   {
     name: "Commisioner",
     name_hi: "आयुक्त",
-    floor: 2,
+    floor: "ground Floor ",
     room: "250",
     link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "Commisioner "
@@ -313,7 +313,7 @@ const departments = [
   // {
   //   name: "Swachhta & Thos",
   //   name_hi: "स्वच्छता & ठोस",
-  //   floor: 2,
+  //   floor: 1,
   //   room: "250",
   //   link: "#court",
   //   id: "Swachhta & Thos "
@@ -329,7 +329,7 @@ const departments = [
   {
     name: "Fire",
     name_hi: "आग बुझाने का डिपो",
-    floor: 2,
+    floor: 1,
     room: "250",
     link: "https://maps.app.goo.gl/kKNc4CJS738Wwxos6",
     id: "Fire"
