@@ -3,7 +3,7 @@ import { MapPin, Building, QrCode, Sun, Moon } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 
 const departmentLogos = {
-  "Accounts Department": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+  "Accounts Department": "/img/Emblem_of_IMC_Indore.jpg",
   "Bridge Cell": "https://cdn-icons-png.flaticon.com/512/684/684908.png",
   "Bulk Collection System, Health Control room and Malaria": "https://cdn-icons-png.flaticon.com/512/2966/2966484.png",
   "Colony Cell": "https://cdn-icons-png.flaticon.com/512/616/616494.png",
@@ -467,7 +467,7 @@ const Index = () => {
                       </div>
                     )}
                     <img
-                      src={dept.logo}
+                      src="/img/Emblem_of_IMC_Indore.jpg"
                       alt={dept.name + " logo"}
                       className={`h-28 w-28 object-contain transition-opacity duration-300 ${imgLoaded[dept.name] ? 'opacity-100' : 'opacity-0'}`}
                       onLoad={() => setImgLoaded(l => ({ ...l, [dept.name]: true }))}
@@ -495,12 +495,7 @@ const Index = () => {
                       {dept.floor}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-muted rounded-xl">
-                    <span className="text-muted-foreground font-semibold">Room:</span>
-                    <span className="text-imc-primary font-bold text-lg">
-                      {dept.room}
-                    </span>
-                  </div>
+                 
                 </div>
 
                 {/* QR Code */}
