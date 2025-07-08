@@ -181,15 +181,15 @@ const departmentsRaw = [
     link: "#court",
     id: "PWD Department"
   },
-  {
-    name: "Regional Park",
-    name_hi: "क्षेत्रीय पार्क",
-    floor: 2,
-    room: "250",
-    link: "#court",
-    id: "Regional Park",
-    img: ""
-  },
+  // {
+  //   name: "Regional Park",
+  //   name_hi: "क्षेत्रीय पार्क",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "Regional Park",
+  //   img: ""
+  // },
   {
     name: "Removal and kondwada",
     name_hi: "निष्कासन और निपटान",
@@ -223,14 +223,14 @@ const departmentsRaw = [
     link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV11",
     id: "Water Supply and tubewell"
   },
-  {
-    name: "Workshop",
-    name_hi: "कार्यशाला",
-    floor: 2,
-    room: "250",
-    link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV12",
-    id: "Workshop"
-  },
+  // {
+  //   name: "Workshop",
+  //   name_hi: "कार्यशाला",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV12",
+  //   id: "Workshop"
+  // },
   {
     name: "yatayat department",
     name_hi: "यातायात (ट्रैफिक) डिपार्टमेंट",
@@ -239,14 +239,14 @@ const departmentsRaw = [
     link: "https://maps.app.goo.gl/cvpwMiuZgcSihCqU6",
     id: "yatayat department"
   },
-  {
-    name: "Zoo department",
-    name_hi: "चिड़ियाघर विभाग",
-    floor: 2,
-    room: "250",
-    link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV12",
-    id: "Zoo department"
-  },
+  // {
+  //   name: "Zoo department",
+  //   name_hi: "चिड़ियाघर विभाग",
+  //   floor: 2,
+  //   room: "250",
+  //   link: "https://maps.app.goo.gl/n5H8rfn41LkBK7GV12",
+  //   id: "Zoo department"
+  // },
   {
     name: "DDARY & rain basera",
     name_hi: "डी.डी.ए.आर.आई. एवं रैन बसेरा",
@@ -311,14 +311,14 @@ const departmentsRaw = [
     link: "https://maps.app.goo.gl/rGShmW4kTybiogiW8",
     id: "Commisioner "
   },
-  {
-    name: "Swachhta & Thos",
-    name_hi: "स्वच्छता & ठोस",
-    floor: 1,
-    room: "250",
-    link: "#court",
-    id: "Swachhta & Thos "
-  },
+  // {
+  //   name: "Swachhta & Thos",
+  //   name_hi: "स्वच्छता & ठोस",
+  //   floor: 1,
+  //   room: "250",
+  //   link: "#court",
+  //   id: "Swachhta & Thos "
+  // },
   {
     name: "map department",
     name_hi: "मानचित्र विभाग",
@@ -702,7 +702,7 @@ const Index = () => {
       {/* Fixed Chat Button */}
       <button
         className="fixed bottom-6 right-6 z-50 bg-imc-primary hover:bg-imc-accent text-white rounded-full w-32 h-32 flex items-center justify-center shadow-lg transition-all duration-300"
-        style={{ boxShadow: '0 4px 24px 0 rgba(0,0,0,0.18)' }}
+        style={{ boxShadow: '0 4px 24px 0 rgba(0, 0, 0, 0.18)' }}
         onClick={() => setChatOpen(o => !o)}
         aria-label="Open chat"
       >
