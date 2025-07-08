@@ -700,7 +700,7 @@ const Index = () => {
         </footer>
       </main>
       {/* Fixed Chat Button */}
-      <button
+      {/* <button
         className="fixed bottom-6 right-6 z-50 bg-imc-primary hover:bg-imc-accent text-white rounded-full w-32 h-32 flex items-center justify-center shadow-lg transition-all duration-300"
         style={{ boxShadow: '0 4px 24px 0 rgba(0, 0, 0, 0.18)' }}
         onClick={() => setChatOpen(o => !o)}
@@ -709,7 +709,7 @@ const Index = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A8.96 8.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
-      </button>
+      </button> */}
       {/* Chat Box */}
       {chatOpen && (
         <div className="fixed bottom-40 right-6 z-50 w-[38rem] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-border p-8 flex flex-col">
